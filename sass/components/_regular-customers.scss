@@ -1,0 +1,26 @@
+.regular-customers {
+    &__line {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 170px;
+        height: 92px;
+        border: 1px solid var(--customer-border-color);
+        fill: var(--customer-border-color);
+        border-radius: 4px;
+        transition: fill var(--time-cubic-bezier), border-color var(--time-cubic-bezier);
+
+        &:focus,
+        &:active,
+        &:hover {
+            fill: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.container-contacts {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+
+    &__item {
+        color: var(--third-black-color);
+        font-weight: 500;
+        text-decoration: none;
+        line-height: 1.14;
+        display: flex;
+        align-items: center;
+        padding: 32px 0;
+        transition: color var(--time-cubic-bezier);
+
+        &:hover .icon,
+        &:focus .icon {
+            fill: var(--accent-color);
+        }
+    }
+
+    &.link {
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-right: 10px;
+        fill: var(--third-black-color);
+    }
+}
+
+.container-contacts__mailito-tel {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;
+}

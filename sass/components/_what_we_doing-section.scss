@@ -1,0 +1,37 @@
+.what_we_doing-section {
+    padding-bottom: 94px;
+
+    &__container {
+        margin: 0 auto;
+        width: 1200px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__part {
+        display: flex;
+    }
+
+    &__item:not(:last-of-type) {
+        margin: 0 30px 0 0;
+    }
+
+    &__details {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        height: 70px;
+        width: 100%;
+        background: var(--bacground-what-we-doing-color);
+        color: var(--brand-color);
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        line-height: 1.14;
+        font-weight: 700;
+    }
+
+    &__wrap {
+        position: relative;
+    }
+}
