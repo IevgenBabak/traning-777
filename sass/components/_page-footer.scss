@@ -39,8 +39,18 @@
 }
 
 .container.footer {
-    display: flex;
-    align-items: baseline;
+    
+    
+    @include tablet {
+            display: flex;
+                align-items: baseline;
+        }
+    
+        @include desktop {
+            display: flex;
+                align-items: baseline;
+        }
+    
 }
 
 .ground-footer {
