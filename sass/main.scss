@@ -1251,8 +1251,8 @@ container-link__item::after {
 }
 
 .modal {
-  width: 528px;
-  height: 581px;
+  width: 450px;
+  height: 609px;
   position: absolute;
   padding: 40px;
   top: 50%;
@@ -1263,6 +1263,16 @@ container-link__item::after {
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--time-cubic-bezier);
+
+  @include tablet {
+    width: 450px;
+    height: 609px;
+  }
+  
+    @include desktop {
+      width: 528px;
+      height: 581px;
+    }
 
   &__title {
     text-align: center;
@@ -1407,7 +1417,7 @@ container-link__item::after {
 }
 
 textarea {
-  width: 448px;
+  width: 370px;
   height: 120px;
   border: 1px solid var(--modal-no-focus-color);
   border-radius: 4px;
@@ -1417,6 +1427,15 @@ textarea {
   outline: none;
   color: var(--backgroun-footer-color);
   transition: border-color var(--time-cubic-bezier);
+
+  @include tablet {
+      
+    }
+  
+    @include desktop {
+      width: 448px;
+        height: 120px;
+    }
 
   &:focus {
     border: 1px solid var(--accent-color);
@@ -1450,9 +1469,13 @@ textarea {
   display: flex;
   align-items: center;
   margin-right: 8.38px;
-  margin-left: 12px;
   transition: border-color var(--time-cubic-bezier);
-}
+  
+  
+    @include desktop {
+      margin-left: 12px;
+    }
+  }
 
 .modal__icon-check {
   fill: var(--brand-color);
@@ -1473,6 +1496,14 @@ textarea {
   display: flex;
   align-items: center;
   font-weight: 400;
+  font-size: 12px;
   line-height: 1.71;
+  letter-spacing: 0.03em;
 
+     @include desktop {
+      display: flex;
+        align-items: center;
+        font-weight: 400;
+        line-height: 1.17;
+    }
 }
