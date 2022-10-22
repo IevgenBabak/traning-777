@@ -22,12 +22,11 @@
           <a href="./index.html" class="logo logo__header"><span class="accent">Web</span>Studio</a>
           <button
             type="button"
-            class="menu-button is-open"
+            class="menu-toggle js-open-menu"
             aria-expanded="false"
-            aria-controls="menu-container"
-            data-menu-button
+            aria-controls="mobile-menu"
           >
-            <svg width="40" height="40" aria-label="Вимикач мобільного меню">
+            <svg width="40" height="40" aria-label="Вмикач мобільного меню">
               <use class="icon-menu" href="./images/sprite.svg#icon-menu_40px"></use>
               </svg>
           </button>
@@ -63,14 +62,14 @@
         </div>
       </div>
 
-          <div class="menu-container" id="menu-container" data-menu>
+          <div class="menu-container js-menu-container" id="mobile-menu">
             <button 
             type="button" 
-            data-menu class="menu__close-button">
+            class="menu-toggle js-close-menu">
             <svg width="40" height="40" aria-label="Вимикач мобільного меню">
               <use class="icon-cross" href="./images/sprite.svg#icon-close_40px"></use>
             </svg>
-        </button>
+            </button>
             <div class="navigation-mob">
               <ul class="navigation__list">
                 <li class="navigation__item">
@@ -121,8 +120,7 @@
             </div>
           </div>
         </nav>
-        <!-- 2 блок контакти -->
-      </div>
+        </div>
     </header>
 
     <main>
@@ -631,5 +629,5 @@
     </div>
     <script src="./js/modal.js"></script>
     <script src="./js/mobile-menu.js"></script>
-  </body>
+    </body>
 </html>
