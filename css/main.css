@@ -306,6 +306,7 @@ header {
 @media screen and (min-width: 768px) {
   .navigation__link.link {
     font-weight: 500;
+    font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--second-black-color);
@@ -319,6 +320,7 @@ header {
 @media screen and (min-width: 1200px) {
   .navigation__link.link {
     font-weight: 500;
+    font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--second-black-color);
@@ -596,7 +598,8 @@ header {
     color: var(--accent-color);
   }
 }
-.container-contacts__item.link.tel .container-contacts__mailito-tel {
+
+.container-contacts__mailito-tel {
   gap: 30px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -606,7 +609,7 @@ header {
           align-items: center;
 }
 @media screen and (min-width: 768px) {
-  .container-contacts__item.link.tel .container-contacts__mailito-tel {
+  .container-contacts__mailito-tel {
     gap: 30px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -617,7 +620,7 @@ header {
   }
 }
 @media screen and (min-width: 1200px) {
-  .container-contacts__item.link.tel .container-contacts__mailito-tel {
+  .container-contacts__mailito-tel {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
