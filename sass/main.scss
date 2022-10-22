@@ -103,6 +103,16 @@ header {
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .logo__header {
@@ -204,13 +214,14 @@ header {
   }
 
   @include tablet {
+    margin-left: 0;
     width: 480px;
     display: flex;
     align-items: center;
   }
 
   @include desktop {
-    width: 1200px;
+    width: 1170px;
     display: flex;
     align-items: center;
   }
@@ -239,8 +250,12 @@ header {
   }
 
   &__list {
+@media screen and (min-width: 480px) {
+   display: none;
+  }
+
     @include tablet {
-      margin-left: 93px;
+      margin-left: 87px;
       display: flex;
       gap: 50px;
     }
@@ -308,6 +323,7 @@ header {
 
   &__link.link.current::after {
     @include tablet {
+      content: "";
       display: block;
       width: 100%;
       height: 4px;
@@ -328,9 +344,18 @@ header {
     }
   }
 }
+.menu-container.is-open .navigation__list,
+.menu-container.is-open .container-contacts {
+  display: block;
+}
+// .navigation-mob ul  (
+// @media screen and (min-width: 480px) {
+//   display: block;
+// }
+// )
 
 .advantages__item {
-@include tablet {
+  @include tablet {
     display: grid;
     grid-template-columns: 354px 354px;
     grid-column-gap: 30px;
@@ -406,17 +431,25 @@ header {
   padding-top: 302px;
   padding-left: 25px;
 
+  @media screen and (min-width: 480px) {
+      display: none;
+    }
+
   @include tablet {
+    display: block;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
+    padding-top: 0;
+    padding-left: 96px;
   }
   @include desktop {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
+    padding-left: 0;
   }
 }
 
@@ -427,30 +460,20 @@ header {
   line-height: 1.14;
   display: flex;
   align-items: center;
-  // padding-bottom: 32px;
   transition: color var(--time-cubic-bezier);
 
   @include tablet {
-    color: var(--third-black-color);
-    font-weight: 500;
-    text-decoration: none;
-    line-height: 1.14;
-    display: flex;
-    align-items: center;
-    padding: 32px 0;
-    transition: color var(--time-cubic-bezier);
+    font-size: 12px;
+    line-height: 1.17;
+    padding-bottom: 10px;
   }
 
   @include desktop {
-    color: var(--third-black-color);
-    font-weight: 500;
-    text-decoration: none;
+    font-size: 14px;
     line-height: 1.14;
-    display: flex;
-    align-items: center;
     padding: 32px 0;
-    transition: color var(--time-cubic-bezier);
   }
+    
 
   &:hover .icon,
   &:focus .icon {
@@ -472,6 +495,13 @@ header {
   }
 }
 
+
+.container-contacts__item:not(:last-child) {
+  @include tablet {
+    padding-bottom: 10px;
+  }
+}
+
 .container-contacts__icon {
   margin-right: 10px;
   fill: var(--third-black-color);
@@ -484,12 +514,14 @@ header {
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
+    margin-right: 8px;
   }
 
   @include desktop {
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
+    margin-right: 10px;
   }
 }
 
@@ -507,7 +539,6 @@ header {
   }
 }
 
-
 .container-contacts__item.link.tel {
   @media screen and (min-width: 480px) {
     font-size: 34px;
@@ -517,48 +548,44 @@ header {
   }
 }
 
-  .container-contacts__mailito-tel {
+.container-contacts__mailito-tel {
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  // flex-direction: column-reverse;
+
+  @include tablet {
     gap: 30px;
     justify-content: flex-end;
     align-items: center;
-    // flex-direction: column-reverse;
-
-    @include tablet {
-      gap: 30px;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    @include desktop {
-      display: flex;
-      gap: 30px;
-      justify-content: flex-end;
-      align-items: center;
-    }
   }
+
+  @include desktop {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
 
 .container-link__list {
   display: flex;
   flex-direction: row;
   padding-left: 25px;
 }
-container-link__item::after {
-  @media screen and (min-width: 480px) {
-    // display: block;
-    border-right: 1px;
-    width: 1px;
-    height: 22px;
-    background-color: var(--accent-color);
-    position: absolute;
-    bottom: -1px;
-  }
-}
+
 .container-link__item {
   font-size: 18px;
+  font-weight: 500;
   line-height: 1.22;
   letter-spacing: 0.02em;
   color: var(--accent-color);
+  position: relative;
+  border-right: 1px solid var(--modal-no-focus-color);
+  padding-right: 9.5px;
+  margin-right: 9.5px;
 }
+
 .container-link {
   padding-top: 64px;
 }
@@ -594,14 +621,12 @@ container-link__item::after {
       width: 354px;
       height: 120px;
       padding: 25px 142px;
-      
     }
 
     @include desktop {
       width: 270px;
       height: 120px;
       padding: 25px 100px;
-      
     }
   }
 
@@ -678,14 +703,11 @@ container-link__item::after {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
-    
 
     @include tablet {
-      
     }
 
     @include desktop {
-      padding: 94px 0;
     }
   }
   &__presentation:not(:last-child) {
@@ -718,12 +740,12 @@ container-link__item::after {
 
   &__item {
     display: block;
-    
+
     @include tablet {
       display: grid;
-        grid-template-columns: 354px 354px;
-        grid-column-gap: 30px;
-        grid-row-gap: 30px;
+      grid-template-columns: 354px 354px;
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
     }
 
     @include desktop {
@@ -1171,8 +1193,6 @@ container-link__item::after {
   }
 }
 
-
-
 // buttons
 .hero__button {
   font-family: inherit;
@@ -1240,8 +1260,6 @@ container-link__item::after {
   }
 }
 
-
-
 /* modal */
 .backdrop {
   position: fixed;
@@ -1272,11 +1290,11 @@ container-link__item::after {
     width: 450px;
     height: 609px;
   }
-  
-    @include desktop {
-      width: 528px;
-      height: 581px;
-    }
+
+  @include desktop {
+    width: 528px;
+    height: 581px;
+  }
 
   &__title {
     text-align: center;
@@ -1329,7 +1347,8 @@ container-link__item::after {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+      drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: background-color var(--time-cubic-bezier);
 
     &:focus {
@@ -1406,7 +1425,7 @@ container-link__item::after {
   border: 1px solid var(--accent-color);
 }
 
-.modal__form-element input:focus+svg {
+.modal__form-element input:focus + svg {
   fill: var(--accent-color);
   transition: fill var(--time-cubic-bezier);
 }
@@ -1433,13 +1452,12 @@ textarea {
   transition: border-color var(--time-cubic-bezier);
 
   @include tablet {
-      
-    }
-  
-    @include desktop {
-      width: 448px;
-        height: 120px;
-    }
+  }
+
+  @include desktop {
+    width: 448px;
+    height: 120px;
+  }
 
   &:focus {
     border: 1px solid var(--accent-color);
@@ -1474,25 +1492,24 @@ textarea {
   align-items: center;
   margin-right: 8.38px;
   transition: border-color var(--time-cubic-bezier);
-  
-  
-    @include desktop {
-      margin-left: 12px;
-    }
+
+  @include desktop {
+    margin-left: 12px;
   }
+}
 
 .modal__icon-check {
   fill: var(--brand-color);
 }
 
-.modal__check input:checked+label .modal__checkbox {
+.modal__check input:checked + label .modal__checkbox {
   background: var(--accent-color);
   border: none;
   display: flex;
   justify-content: center;
 }
 
-.modal__check input:focus+label .modal__checkbox {
+.modal__check input:focus + label .modal__checkbox {
   border-color: var(--accent-color);
 }
 
@@ -1504,10 +1521,35 @@ textarea {
   line-height: 1.71;
   letter-spacing: 0.03em;
 
-     @include desktop {
-      display: flex;
-        align-items: center;
-        font-weight: 400;
-        line-height: 1.17;
-    }
+  @include desktop {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.17;
+  }
+}
+
+.menu__close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: var(--brand-color);
+  cursor: pointer;
+  transition: fill var(--time-cubic-bezier);
+
+  @include tablet {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
 }
