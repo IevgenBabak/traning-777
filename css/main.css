@@ -53,7 +53,7 @@ li {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .container {
     width: 480px;
   }
@@ -166,6 +166,12 @@ header {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-right: 23px;
   padding: 0;
   border: none;
@@ -177,12 +183,46 @@ header {
   }
 }
 
+.menu-toggle.js-close-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--brand-color);
+  cursor: pointer;
+  -webkit-transition: fill var(--time-cubic-bezier);
+  transition: fill var(--time-cubic-bezier);
+}
+.menu-toggle.js-close-menu:hover, .menu-toggle.js-close-menu:focus {
+  fill: var(--accent-color);
+}
+
 .menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: var(--brand-color);
   padding: 32px;
   font-size: 20px;
@@ -192,12 +232,13 @@ header {
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
 }
-.menu-container .menu-container.is-open {
+
+.menu-container.is-open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 @media screen and (min-width: 767px) {
-  .menu-container {
+  .menu-container.is-open {
     display: none;
     position: absolute;
     top: 100%;
@@ -220,7 +261,7 @@ header {
           align-items: center;
   padding: 0;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .navigation {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -294,6 +335,7 @@ header {
 @media screen and (min-width: 1200px) {
   .navigation__list {
     margin-left: 93px;
+    margin-right: 315px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -383,8 +425,22 @@ header {
   }
 }
 
-.menu-container.is-open .navigation__list,
-.menu-container.is-open .container-contacts {
+.navigation > .navigation__list {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .navigation > .navigation__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.menu-container.is-open .navigation__list {
+  display: block;
+}
+
+.menu-container.is-open .container-contacts__mailito-tel {
   display: block;
 }
 
@@ -468,13 +524,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
-  padding-top: 302px;
   padding-left: 25px;
-}
-@media screen and (min-width: 480px) {
-  .container-contacts {
-    display: none;
-  }
 }
 @media screen and (min-width: 768px) {
   .container-contacts {
@@ -498,6 +548,17 @@ header {
     margin-right: auto;
     width: 1200px;
     padding-left: 0;
+  }
+}
+
+.navigation > .container-contacts {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .navigation > .container-contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -562,7 +623,7 @@ header {
   margin-right: 10px;
   fill: var(--third-black-color);
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .container-contacts__icon {
     display: none;
   }
@@ -592,7 +653,7 @@ header {
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .container-contacts__item.link.mailto {
     font-size: 24px;
     line-height: 1.17;
@@ -602,7 +663,7 @@ header {
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .container-contacts__item.link.tel {
     font-size: 34px;
     line-height: 1.18;
@@ -658,7 +719,6 @@ header {
 }
 
 .container-link__item {
-  display: none;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.22;
@@ -673,6 +733,7 @@ header {
 
 .container-link {
   padding-top: 64px;
+  padding-bottom: 16px;
 }
 
 .advantages,
@@ -730,7 +791,7 @@ header {
   color: var(--second-black-color);
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .what_we_doing-section {
     display: none;
   }
@@ -1777,7 +1838,7 @@ textarea::placeholder {
   }
 }
 
-.menu__close-button {
+.menu-container > .menu-toggle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1791,7 +1852,7 @@ textarea::placeholder {
   height: 40px;
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: -8px;
   border: none;
   background: var(--brand-color);
   cursor: pointer;
@@ -1799,11 +1860,11 @@ textarea::placeholder {
   transition: fill var(--time-cubic-bezier);
 }
 @media screen and (min-width: 768px) {
-  .menu__close-button {
+  .menu-container > .menu-toggle {
     display: none;
   }
 }
-.menu__close-button:hover, .menu__close-button:focus {
+.menu-container > .menu-toggle:hover, .menu-container > .menu-toggle:focus {
   fill: var(--accent-color);
 }
 
@@ -1899,4 +1960,8 @@ textarea::placeholder {
 .portfolio__box-link:hover .portfolio__box-link-details, .portfolio__box-link:focus .portfolio__box-link-details {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.no-scroll {
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

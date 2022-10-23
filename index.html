@@ -83,7 +83,7 @@
                 </li>
               </ul>
             </div>
-
+          <div>
             <div class="container-contacts">
               <ul class="container-contacts__mailito-tel">
                 <li class="container-contacts__line">
@@ -117,6 +117,7 @@
                   <a class="container-link__item" href="">Linkedin</a>
                 </li>
               </ul>
+            </div>
             </div>
           </div>
         </nav>
@@ -233,11 +234,18 @@
             <li class="our-team__presentation">
               <img
                 class="img-block"
-                src="./images/photo_ihor_demyanenko.jpg"
+                srcset="
+                /images/demyanenko/ihordemianenko-mobile.jpg              450w,
+                /images/demyanenko/ihordemianenko-tablet.jpg              354w,
+                /images/demyanenko/ihordemianenko-desktop.jpg             270w,
+                /images/demyanenko/ihordemianenko-mobile-x2.jpg           900w,
+                /images/demyanenko/ihordemianenko-tablet-x2.jpg           708w,
+                images/demyanenko/ihordemianenko-desktop-x2.jpg           540w
+                "
+                sizes="(min-width: 1170px) 270px, (min-width: 481px) 354px,"
+                src="/images/demyanenko/ihordemianenko-mobile.jpg"
                 alt="фото Ігора Дем'яненко"
-                width="270"
-                height="260"
-              />
+                />
               <div class="our-team__card">
                 <h3 class="our-team__name">Ігор Дем'яненко</h3>
                 <p class="our-team__txt" lang="en">Product Designer</p>
