@@ -173,13 +173,11 @@ header {
   z-index: 999;
   transform: translateX(100%);
   transition: 250ms ease-in-out;
-  // opacity: 0;
-}
+ }
 
 .menu-container.is-open {
   transform: translateX(0);
-  // opacity: 1;
-
+  
   @media screen and (min-width: 767px) {
     display: none;
     position: absolute;
@@ -586,7 +584,6 @@ header {
 
 .container-link__list {
   display: flex;
-  // flex-direction: row;
   flex-wrap: wrap;
   padding-left: 25px;
 }
