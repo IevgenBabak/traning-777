@@ -47,14 +47,14 @@
             <li>
               <a class="container-contacts__item link" href="mailto:info@devstudio.com">
                 <svg class="container-contacts__icon icon" width="16px" height="12px">
-                  <use href="./images/sprite.svg#icon-envelope"></use></svg
+                  <use class="icon-envelope" href="./images/sprite.svg#icon-envelope"></use></svg
                 >info@devstudio.com
               </a>
             </li>
             <li>
               <a class="container-contacts__item link" href="tel:+380961111111">
                 <svg class="container-contacts__icon icon" width="10px" height="16px">
-                  <use href="./images/sprite.svg#icon-smartphone"></use></svg
+                  <use class="icon-smartphone" href="./images/sprite.svg#icon-smartphone"></use></svg
                 >+38 096 111 11 11</a
               >
             </li>
@@ -242,7 +242,7 @@
                 ./images/demyanenko/ihordemianenko-tablet-x2.jpg           708w,
                 ./images/demyanenko/ihordemianenko-desktop-x2.jpg          540w
                 "
-                sizes="(min-width: 1170px) 270px, (min-width: 481px) 354px, 450px"
+                sizes="(min-width: 1170px) 270px, (min-width: 768px) 354px, (max-width: 767px) 450px, 450px"
                 src="/images/demyanenko/ihordemianenko-mobile.jpg"
                 alt="фото Ігора Дем'яненко"
                 />
@@ -288,7 +288,7 @@
                 ./images/repina/olgharepina-tablet-x2.jpg  708w,
                 ./images/repina/olgharepina-desktop -x2.jpg 540w
                 "
-                sizes="(min-width: 1170px) 270px, (min-width: 481px) 354px, 450px"
+                sizes="(min-width: 1170px) 270px, (min-width: 768px) 354px, (max-width: 767px) 450px, 450px"
                 src="./images/repina/olgharepina-mobile.jpg"
                 alt="фото Ольги Репіної"
                 />
@@ -334,7 +334,7 @@
                 ./images/tarasov/mukolatarasov-desktop-x2.jpg 708w,
                 ./images/tarasov/mukolatarasov-desktop-x2.jpg 540w
                 "
-                 sizes="(min-width: 1170px) 270px, (min-width: 481px) 354px, 450px"
+                sizes="(min-width: 1170px) 270px, (min-width: 768px) 354px, (max-width: 767px) 450px, 450px"
                 src="./images/tarasov/mukolatarasov-desktop.jpg"
                 alt="фото Миколи Тарасова"
                 />
@@ -380,7 +380,7 @@
                 ./images/ermakov/mikhailoermakov-tablet-x2.jpg 708w,
                 ./images/ermakov/mikhailoermakov-desktop-x2.jpg 540w
                 "
-                sizes="(min-width: 1170px) 270px, (min-width: 481px) 354px, 450px"
+                sizes="(min-width: 1170px) 270px, (min-width: 768px) 354px, (max-width: 767px) 450px, 450px"
                 src="./images/ermakov/mikhailoermakov-mobile.jpg"
                 alt="фото Михайла Єрмакова"
                 />
@@ -643,8 +643,11 @@
                   <use class="icon-vector-check" href="./images/sprite.svg#icon-vector-check"></use>
                 </svg>
               </span>
+              <div class="modal__accept" >
               Погоджуюся з розсилкою та приймаю
-              <a href="*" class="modal__contract">Умови договору</a></label
+              <a href="*" class="modal__contract">Умови договору</a>
+            </div>
+              </label
             >
           </div>
           <button type="submit" class="modal__submit-btn">Відправити</button>

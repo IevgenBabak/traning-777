@@ -653,6 +653,27 @@ header {
   }
 }
 
+.icon-envelope {
+  width: 14px;
+  height: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .icon-envelope {
+    width: 16px;
+    height: 12px;
+  }
+}
+
+.icon-smartphone {
+  width: 10px;
+  height: 14px;
+}
+@media screen and (min-width: 1200px) {
+  .icon-smartphone {
+    height: 12px;
+  }
+}
+
 @media screen and (min-width: 320px) {
   .container-contacts__item.link.mailto {
     font-size: 24px;
@@ -725,10 +746,13 @@ header {
   letter-spacing: 0.02em;
   color: var(--accent-color);
   position: relative;
-  border-right: 1px solid var(--modal-no-focus-color);
   padding-right: 9.5px;
   margin-right: 9.5px;
   text-decoration: none;
+}
+
+.container-link__item li:not(:last-child) {
+  border-right: 1px solid var(--modal-no-focus-color);
 }
 
 .container-link {
@@ -904,6 +928,8 @@ header {
     grid-template-columns: 354px 354px;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+    -ms-flex-preferred-size: calc((100% - 20px) / 2);
+        flex-basis: calc((100% - 20px) / 2);
   }
 }
 @media screen and (min-width: 1200px) {
@@ -912,6 +938,8 @@ header {
     display: -ms-flexbox;
     display: flex;
     gap: 30px;
+    -ms-flex-preferred-size: calc((100% - 40px) / 4);
+        flex-basis: calc((100% - 40px) / 4);
   }
 }
 .our-team__name {
@@ -1836,6 +1864,10 @@ textarea::placeholder {
     font-weight: 400;
     line-height: 1.17;
   }
+}
+
+.modal__accept {
+  display: inline-block;
 }
 
 .menu-container > .menu-toggle {
