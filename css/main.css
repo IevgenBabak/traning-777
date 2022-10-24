@@ -231,11 +231,13 @@ header {
           transform: translateX(100%);
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
+  opacity: 0;
 }
 
 .menu-container.is-open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+  opacity: 1;
 }
 @media screen and (min-width: 767px) {
   .menu-container.is-open {
@@ -1394,36 +1396,6 @@ header {
   -webkit-transition: background-color var(--time-cubic-bezier);
   transition: background-color var(--time-cubic-bezier);
   margin: 0 auto;
-}
-@media screen and (min-width: 1200px) {
-  .ground-footer__subscribe--btn {
-    border: none;
-    width: 200px;
-    height: 50px;
-    color: var(--brand-color);
-    background-color: var(--accent-color);
-    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.9;
-    letter-spacing: 0.06em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    text-align: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 10.54px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    cursor: pointer;
-    -webkit-transition: background-color var(--time-cubic-bezier);
-    transition: background-color var(--time-cubic-bezier);
-  }
 }
 .ground-footer__subscribe--btn:focus, .ground-footer__subscribe--btn:hover {
   background: var(--active-color);
