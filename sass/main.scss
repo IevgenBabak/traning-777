@@ -33,7 +33,7 @@ li {
   padding-right: 15px;
 
   @media screen and (min-width: 320px) {
-    width: 480px;
+    width: 100%;
   }
   @include tablet {
     width: 768px;
@@ -53,10 +53,13 @@ li {
 }
 
 .img-block {
-  @include desktop {
-    display: block;
-    width: 100%;
-  }
+  // @include desktop {
+  //   display: block;
+  //   width: 100%;
+  // }
+     display: block;
+     width: 100%;
+     height: auto;
 }
 
 .text {
@@ -122,7 +125,6 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 23px;
   padding: 0;
   border: none;
   background-color: transparent;
@@ -151,6 +153,15 @@ header {
   }
 }
 
+.icon-menu {
+  transition: fill var(--time-cubic-bezier);
+  
+    &:hover,
+    &:focus {
+      fill: var(--accent-color);
+    }
+}
+
 .menu-container {
   display: flex;
   flex-direction: column;
@@ -166,12 +177,12 @@ header {
   z-index: 999;
   transform: translateX(100%);
   transition: 250ms ease-in-out;
-  opacity: 0;
+  // opacity: 0;
 }
 
 .menu-container.is-open {
   transform: translateX(0);
-  opacity: 1;
+  // opacity: 1;
 
   @media screen and (min-width: 767px) {
     display: none;
@@ -185,7 +196,7 @@ header {
 .navigation {
   margin-left: auto;
   margin-right: auto;
-  width: 480px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   display: flex;
@@ -380,7 +391,8 @@ header {
   @include tablet {
     padding: 118px 0;
     max-width: 768px;
-    background-image: url('../images/hero/hero-img-tablet.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/hero/hero-img-tablet.jpg');
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       .box {
         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -392,10 +404,12 @@ header {
   @include desktop {
     padding: 200px 0;
     max-width: 1600px;
-    background-image: url('../images/hero/hero-Img-desktop.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/hero/hero-Img-desktop.jpg');
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       .box {
-        background-image: url('../images/hero/hero-img-desktop-x2.jpg');
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+         url('../images/hero/hero-img-desktop-x2.jpg');
       }
     }
   }
@@ -622,24 +636,23 @@ header {
   &__icon {
     display: flex;
     align-items: center;
-    width: 450px;
+    width: 100%;
     height: 120px;
     background-color: var(--background-button-color);
     border-radius: 4px;
-    padding: 25px 190px;
     margin-bottom: 30px;
+    justify-content: center;
 
     @include tablet {
       width: 354px;
       height: 120px;
-      padding: 25px 142px;
+      
     }
 
     @include desktop {
       width: 270px;
       height: 120px;
-      padding: 25px 100px;
-    }
+       }
   }
 
   &__title {
@@ -823,31 +836,23 @@ header {
 
 .regular-customers {
   &__line {
-    display: grid;
-    grid-template-columns: 210px 210px;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
-
-    @include tablet {
-      display: grid;
-      grid-template-columns: 226px 226px 226px;
-      grid-column-gap: 30px;
-      grid-row-gap: 30px;
-    }
-
-    @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+   
+      @include desktop {
       display: flex;
       justify-content: center;
       gap: 30px;
     }
   }
-
+  
   &__link {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 210px;
-    height: 92px;
+    width: 100%;
+    height: 100%;
 
     border: 1px solid var(--customer-border-color);
     fill: var(--customer-border-color);
@@ -872,6 +877,21 @@ header {
     }
   }
 }
+
+    
+.regular-customer__logo {
+    height: 92px;
+    flex-basis: calc((100% - 30px) / 2);
+  
+    @include tablet {
+      flex-basis: calc((100% - 60px) / 3);
+    }
+  
+    @include desktop {
+    flex-basis: calc((100% - 150px) / 7);
+    }
+}
+
 
 /* Footer */
 .ground-footer {
@@ -1050,7 +1070,7 @@ header {
     }
   }
   &__input {
-    width: 450px;
+    width: 100%;
     height: 50px;
     background: var(--backgroun-footer-color);
     border: 1px solid var(--subscribe-border-color);
